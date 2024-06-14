@@ -38,3 +38,5 @@ The goal of this project is to automate the creation of optimized schedules usin
 ### Implementation
 The application leverages genetic algorithms to intelligently schedule exams or courses, promoting efficient use of resources and satisfying various constraints. This approach not only automates scheduling but also improves the overall quality of schedules generated.
 
+# NOT!!!
+Klasörlerin içinde bulunan **Rapor.pdf** adlı dosyada projenin Türkçe olarak anlatımı vardır.
