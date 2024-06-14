@@ -1,0 +1,85 @@
+<app-page-header
+  [link]="'majors'"
+  [prev]="'Majors'"
+  [current]="'Add new Major'"
+></app-page-header>
+
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card comman-shadow">
+      <div class="card-body">
+        <form [formGroup]="newMajorFormGroup" (ngSubmit)="handleAddMajor()">
+          <div class="row">
+            <div class="col-12">
+              <h5 class="form-title student-info">
+                Information about major<span
+              ><a href="javascript:;"
+              ><i class="feather-more-vertical"></i></a
+              ></span>
+              </h5>
+            </div>
+            <div class="col-12 col-sm-4">
+              <div class="form-group local-forms">
+                <label>Label <span class="login-danger">*</span></label>
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="label ...."
+                  formControlName="label"
+                />
+              </div>
+            </div>
+            <div class="col-12 col-sm-4">
+              <div class="form-group local-forms">
+                <label>Number of Semester <span class="login-danger">*</span></label>
+                <input
+                  class="form-control"
+                  type="number"
+                  placeholder="numOfSem...."
+                  formControlName="numOfSem"
+                />
+              </div>
+            </div>
+            <div class="col-12 col-sm-4">
+              <div class="form-group local-forms">
+                <label>major chef<span class="login-danger">*</span></label>
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="Major chef ...."
+                  formControlName="chefMajor"
+                />
+              </div>
+            </div>
+            <div class="col-12 col-sm-4">
+              <div class="form-group local-forms">
+                <label>Department<span class="login-danger">*</span></label>
+                <select class="form-control" formControlName="department">
+                  <option *ngFor="let dep of departments" [value]="dep.label">{{ dep.label }}</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-12 d-flex align-items-center justify-content-center">
+              <div class="student-submit">
+                <button type="submit" class="btn btn-primary">Confirm</button>
+              </div>
+            </div>
+            <hr class="mt-4" />
+            <div class="col-12 col-sm-12">
+              <div class="form-group students-up-files">
+                <label>
+                  You can also upload a list of majors (xlsx, csv, txt)
+                </label>
+                <div class="uplod">
+                  <label class="file-upload image-upbtn mb-0">
+                    Choose a file <input type="file" />
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,77 @@
+<app-page-header
+  [link]="'class'"
+  [prev]="'Class'"
+  [current]="'Add new class'"
+></app-page-header>
+
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card comman-shadow">
+      <div class="card-body">
+        <form [formGroup]="newClassFormGroup" (ngSubmit)="handleAddClasses()">
+          <div class="row">
+            <div class="col-12">
+              <h5 class="form-title student-info">
+                Information about the Class<span
+              ><a href="javascript:;"
+              ><i class="feather-more-vertical"></i></a
+              ></span>
+              </h5>
+            </div>
+            <div class="col-12 col-sm-4">
+              <div class="form-group local-forms">
+                <label>Label <span class="login-danger">*</span></label>
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="label ...."
+                  formControlName="label"
+                />
+              </div>
+            </div>
+            <div class="col-12 col-sm-4">
+              <div class="form-group local-forms">
+                <label>Number of Students <span class="login-danger">*</span></label>
+                <input
+                  class="form-control"
+                  type="number"
+                  placeholder="Number of Students...."
+                  formControlName="nbrStudents"
+                />
+              </div>
+            </div>
+            <div class="col-12 col-sm-4">
+              <div class="form-group local-forms">
+                <label>major<span class="login-danger">*</span></label>
+                <select class="form-control" formControlName="major">
+                  <option value="" disabled selected>Choose a major</option>
+                  <option *ngFor="let major of majors" [value]="major">{{ major }}</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-12 d-flex align-items-center justify-content-center">
+              <div class="student-submit">
+                <button type="submit" class="btn btn-primary">Confirm</button>
+              </div>
+            </div>
+          </div>
+        <div>
+            <hr class="mt-4" />
+            <div class="col-12 col-sm-12">
+              <div class="form-group students-up-files">
+                <label>
+                  You can also upload a list of classes (xlsx, csv, txt)
+                </label>
+                <div class="uplod">
+                  <label class="file-upload image-upbtn mb-0">
+                    Choose a file <input type="file" />
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
